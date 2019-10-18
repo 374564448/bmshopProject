@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/bmshopProject.iml" filepath="$PROJECT_DIR$/.idea/bmshopProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bmshop/common/common.iml" filepath="$PROJECT_DIR$/bmshop/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bmshop/dependencies/dependencies.iml" filepath="$PROJECT_DIR$/bmshop/dependencies/dependencies.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bmshop/gateway/gateway.iml" filepath="$PROJECT_DIR$/bmshop/gateway/gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bmshop/item/item.iml" filepath="$PROJECT_DIR$/bmshop/item/item.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bmshop/item/item-interface/item-interface.iml" filepath="$PROJECT_DIR$/bmshop/item/item-interface/item-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bmshop/item/item-service/item-service.iml" filepath="$PROJECT_DIR$/bmshop/item/item-service/item-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bmshop/parent.iml" filepath="$PROJECT_DIR$/bmshop/parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bmshop/registry/registry.iml" filepath="$PROJECT_DIR$/bmshop/registry/registry.iml" />
+    </modules>
+  </component>
+</project>
