@@ -1,5 +1,6 @@
 package com.banmingi.bmshop.upload.service;
 
+import com.banmingi.bmshop.upload.provider.OSSProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -50,10 +51,12 @@ public class UploadService {
             }
 
             //上传至服务器
-            file.transferTo(new File("D:\\MyProjects\\images\\bmshopImages\\"+originalFilename));
-
+            String url = OSSProvider.upload(file);
+            if(url == null) {
+                LOGGER.info("服务器异常：{}",originalFilename);
+            }
             //返回url,进行回显
-            return "http://image.bmshop.com/"+ originalFilename;
+            return url;
         } catch (IOException e) {
             LOGGER.info("服务器内部异常：{}",originalFilename);
             e.printStackTrace();

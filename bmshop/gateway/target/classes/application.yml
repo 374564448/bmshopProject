@@ -16,3 +16,8 @@ zuul:
   routes:
     # 路由到商品微服务
     item-service: /item/**
+    #用这种配置方式才能使跳转到upload后路径上还有/upload
+    upload-service:
+      path: /upload/**
+      serviceId: upload-service
+      strip-prefix: false
