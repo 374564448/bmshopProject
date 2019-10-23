@@ -7,7 +7,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="gateway" />
-        <module name="item-service (1)" />
         <module name="common" />
         <module name="item-interface" />
         <module name="item-service" />
@@ -22,7 +21,6 @@
       <module name="item" target="1.8" />
       <module name="item-interface" target="1.8" />
       <module name="item-service" target="1.8" />
-      <module name="item-service (1)" target="1.8" />
       <module name="parent" target="1.8" />
       <module name="registry" target="1.8" />
       <module name="upload" target="1.8" />
@@ -34,7 +32,6 @@
       <module name="gateway" options="-parameters" />
       <module name="item-interface" options="-parameters" />
       <module name="item-service" options="-parameters" />
-      <module name="item-service (1)" options="-parameters" />
       <module name="registry" options="-parameters" />
       <module name="upload" options="-parameters" />
     </option>
