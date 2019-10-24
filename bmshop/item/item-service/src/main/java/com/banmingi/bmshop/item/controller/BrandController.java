@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -66,5 +67,20 @@ public class BrandController {
         this.brandService.saveBrand(brand,cids);
         //201
         return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+
+    /**
+     * 根据分类id查询品牌列表.
+     * @param cid
+     * @return
+     */
+    @GetMapping("cid/{cid}")
+    public ResponseEntity<List<Brand>> queryBrandsByCid(@PathVariable("cid")Long cid) {
+        List<Brand> brands = this.brandService.queryBrandsByCid(cid);
+        if(CollectionUtils.isEmpty(brands)) {
+            //404
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(brands);
     }
 }

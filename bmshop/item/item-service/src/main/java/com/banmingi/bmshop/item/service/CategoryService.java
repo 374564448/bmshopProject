@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @auther 半命i 2019/10/19
@@ -27,5 +28,15 @@ public class CategoryService {
         record.setParentId(pid);
 
         return this.categoryMapper.select(record);
+    }
+
+    /**
+     * 根据分类id集合获取分类名称集合
+     * @param ids
+     * @return
+     */
+    public List<String> queryNamesByIds(List<Long> ids) {
+        List<Category> categories = this.categoryMapper.selectByIdList(ids);
+        return categories.stream().map(category -> category.getName()).collect(Collectors.toList());
     }
 }
