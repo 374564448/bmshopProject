@@ -9,6 +9,7 @@ import com.banmingi.bmshop.item.mapper.SpuDetailMapper;
 import com.banmingi.bmshop.item.mapper.SpuMapper;
 import com.banmingi.bmshop.item.mapper.StockMapper;
 import com.banmingi.bmshop.item.pojo.Brand;
+import com.banmingi.bmshop.item.pojo.Sku;
 import com.banmingi.bmshop.item.pojo.Spu;
 import com.banmingi.bmshop.item.pojo.SpuDetail;
 import com.banmingi.bmshop.item.pojo.Stock;
@@ -122,6 +123,46 @@ public class GoodsService {
         spuDetail.setSpuId(spuBo.getId());
         this.spuDetailMapper.insertSelective(spuDetail);
 
+        //新增ku和stock信息
+        this.saveSkuAndStock(spuBo);
+    }
+
+
+
+    /**
+     * 更新商品(手机)信息.
+     * @param spuBo
+     */
+    @Transactional
+    public void updateGoods(SpuBo spuBo) {
+        //根据spuId查询要删除的sku
+        Sku record = new Sku();
+        record.setSpuId(spuBo.getId());
+        List<Sku> skus = this.skuMapper.select(record);
+        skus.forEach(sku -> {
+            //删除stock
+            this.stockMapper.deleteByPrimaryKey(sku.getId());
+            //删除sku
+            this.skuMapper.deleteByPrimaryKey(sku.getId());
+        });
+
+        //更新sku和stock信息
+        this.saveSkuAndStock(spuBo);
+
+        //更新spu和spuDetail
+        spuBo.setCreateTime(null);
+        spuBo.setLastUpdateTime(new Date());
+        spuBo.setValid(null);
+        spuBo.setSaleable(null);
+        this.spuMapper.updateByPrimaryKeySelective(spuBo);
+        this.spuDetailMapper.updateByPrimaryKeySelective(spuBo.getSpuDetail());
+    }
+
+    /**
+     * 新增sku和stock信息
+     * @param spuBo
+     */
+    private void saveSkuAndStock(SpuBo spuBo) {
         spuBo.getSkus().forEach(sku -> {
             //再新增sku
             sku.setId(null);
@@ -136,9 +177,35 @@ public class GoodsService {
             stock.setStock(sku.getStock());
             this.stockMapper.insertSelective(stock);
         });
-
-
-
-
     }
+
+    /**
+     * 根据spuId查询spuDetail.
+     * @param spuId
+     * @return
+     */
+    public SpuDetail querySpuDetailBySpuId(Long spuId) {
+        return this.spuDetailMapper.selectByPrimaryKey(spuId);
+    }
+
+    /**
+     * 根据spuId查询sku集合
+     * @param spuId
+     * @return
+     */
+    public List<Sku> querySkusBySpuId(Long spuId) {
+        //查询sku
+        Sku record = new Sku();
+        record.setSpuId(spuId);
+        List<Sku> skus = this.skuMapper.select(record);
+
+        skus.forEach(sku -> {
+            //查询stock
+            Stock stock = this.stockMapper.selectByPrimaryKey(sku.getId());
+            sku.setStock(stock.getStock());
+        });
+        return skus;
+    }
+
+
 }
