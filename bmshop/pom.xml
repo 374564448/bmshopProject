@@ -20,6 +20,7 @@
         <module>common</module>
         <module>upload</module>
         <module>item</module>
+        <module>search</module>
     </modules>
 
     <properties>

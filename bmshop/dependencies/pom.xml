@@ -16,7 +16,7 @@
         <fastDFS.client.version>1.26.7</fastDFS.client.version>
         <aliyun-sdk-oss.version>3.7.0</aliyun-sdk-oss.version>
         <lombok.version>1.18.8</lombok.version>
-        <version>3.9</version>
+        <commons-lang3.version>3.9</commons-lang3.version>
     </properties>
     <licenses>
         <license>

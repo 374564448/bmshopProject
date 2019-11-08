@@ -2,9 +2,7 @@ package com.banmingi.bmshop.item.controller;
 
 import com.banmingi.bmshop.item.pojo.Category;
 import com.banmingi.bmshop.item.service.CategoryService;
-import com.netflix.ribbon.proxy.annotation.Http;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -46,4 +44,23 @@ public class CategoryController {
         //200: 查询成功
         return ResponseEntity.ok(categories);
     }
+
+
+    /**
+     * 据分类id集合获取分类名称集合.
+     * @param ids
+     * @return
+     */
+    @GetMapping
+    public ResponseEntity<List<String>> queryNamesByIds(@RequestParam("ids") List<Long> ids) {
+        List<String> names = this.categoryService.queryNamesByIds(ids);
+        if (CollectionUtils.isEmpty(names)) {
+            //404: 资源服务器未找到
+            return ResponseEntity.notFound().build();
+        }
+        //200: 查询成功
+        return ResponseEntity.ok(names);
+    }
+
+
 }

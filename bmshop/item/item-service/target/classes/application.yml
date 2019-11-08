@@ -5,9 +5,11 @@ spring:
   application:
     name: item-service
   datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/bmshop?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
     username: root
     password: wen175924
+
 
 eureka:
   client:

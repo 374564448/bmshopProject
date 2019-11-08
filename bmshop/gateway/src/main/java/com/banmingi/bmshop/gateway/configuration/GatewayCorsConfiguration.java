@@ -21,6 +21,7 @@ public class GatewayCorsConfiguration {
         CorsConfiguration configuration = new CorsConfiguration();
         //允许跨域的域名.如果要携带cookie,不能写*
         configuration.addAllowedOrigin("http://manage.bmshop.com");
+        configuration.addAllowedOrigin("http://www.bmshop.com");
         configuration.setAllowCredentials(true); //允许携带Cookie
         configuration.addAllowedMethod("*"); //允许所有请求方法通过  GET、POST、PUT......
         configuration.addAllowedHeader("*"); //允许携带任何头信息

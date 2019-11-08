@@ -21,3 +21,6 @@ zuul:
       path: /upload/**
       serviceId: upload-service
       strip-prefix: false
+    # 路由到搜索微服务
+    search-service: /search/**
+

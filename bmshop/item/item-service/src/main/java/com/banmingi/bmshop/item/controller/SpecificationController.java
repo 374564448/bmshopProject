@@ -43,6 +43,9 @@ public class SpecificationController {
     /**
      * 根据条件查询规格参数.
      * @param gid
+     * @param cid
+     * @param generic
+     * @param searching
      * @return
      */
     @GetMapping("params")
