@@ -122,7 +122,7 @@
                 <div class="fl key">{{f.k}}</div>
                 <div class="fl value">
                     <ul class="type-list">
-                        <li v-for="(o,j) in f.options" :key="j">
+                        <li v-for="(o,j) in f.options" :key="j" @click="selectFilter(f.k,o)">
                             <a>{{o.name}}</a>
                         </li>
                     </ul>
@@ -133,8 +133,8 @@
                 <div class="fl key brand">{{f.k}}</div>
                 <div class="value logos">
                     <ul class="logo-list">
-                        <li v-for="(o,j) in f.options" :key="j" v-if="o.image"><img :src="o.image" /></li>
-                        <li style="text-align: center" v-else><a style="line-height: 30px; font-size: 12px" href="#">{{o.name}}</a></li>
+                        <li v-for="(o,j) in f.options" :key="j" v-if="o.image"><img :src="o.image" @click="selectFilter(f.k,o)"/></li>
+                        <li style="text-align: center" v-else @click="selectFilter(f.k,o)"><a style="line-height: 30px; font-size: 12px" href="#">{{o.name}}</a></li>
                     </ul>
                 </div>
                 <div class="fl ext">
@@ -334,7 +334,8 @@
             ly,
             search: {
                 key: "",
-                page: 1
+                page: 1,
+                filter: {}
             },
             goodsList: [],
             totalPage: 1,
@@ -349,6 +350,7 @@
             }
             const search = ly.parse(location.search.substring(1));
             search.page = parseInt(search.page) || 1;
+            search.filter = search.filter || {};
             this.search = search;
             //发送异步请求,获取数据
             this.loadData();
@@ -412,6 +414,16 @@
                 if(this.search.page < this.totalPage) {
                     this.search.page++;
                 }
+            },
+            selectFilter(k,o) {
+                let obj = {};
+                Object.assign(obj,this.search);
+                if(k == "品牌" || k == "分类") {
+                    obj.filter[k] = o.id;
+                } else {
+                    obj.filter[k] = o.name;
+                }
+                this.search = obj;
             }
         },
 
