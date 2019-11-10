@@ -3,6 +3,7 @@ package com.banmingi.bmshop.search;
 import com.banmingi.bmshop.common.pojo.PageResult;
 import com.banmingi.bmshop.search.pojo.Goods;
 import com.banmingi.bmshop.search.pojo.SearchRequest;
+import com.banmingi.bmshop.search.pojo.SearchResult;
 import com.banmingi.bmshop.search.service.SearchService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +29,8 @@ public class controllerSearchController {
      * @return
      */
     @PostMapping("page")
-    public ResponseEntity<PageResult<Goods>> search(@RequestBody SearchRequest searchRequest) {
-        PageResult<Goods> result = this.searchService.search(searchRequest);
+    public ResponseEntity<SearchResult> search(@RequestBody SearchRequest searchRequest) {
+        SearchResult result = this.searchService.search(searchRequest);
         if(result == null || CollectionUtils.isEmpty(result.getItems())) {
             //404
             return ResponseEntity.notFound().build();
