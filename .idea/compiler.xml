@@ -13,18 +13,22 @@
         <module name="item-service" />
         <module name="registry" />
         <module name="upload" />
+        <module name="search (1)" />
+        <module name="goods-web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="common" target="1.8" />
       <module name="dependencies" target="1.8" />
       <module name="gateway" target="1.8" />
+      <module name="goods-web" target="1.8" />
       <module name="item" target="1.8" />
       <module name="item-interface" target="1.8" />
       <module name="item-service" target="1.8" />
       <module name="parent" target="1.8" />
       <module name="registry" target="1.8" />
       <module name="search" target="1.8" />
+      <module name="search (1)" target="1.8" />
       <module name="upload" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -32,10 +36,12 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="common" options="-parameters" />
       <module name="gateway" options="-parameters" />
+      <module name="goods-web" options="-parameters" />
       <module name="item-interface" options="-parameters" />
       <module name="item-service" options="-parameters" />
       <module name="registry" options="-parameters" />
       <module name="search" options="-parameters" />
+      <module name="search (1)" options="-parameters" />
       <module name="upload" options="-parameters" />
     </option>
   </component>

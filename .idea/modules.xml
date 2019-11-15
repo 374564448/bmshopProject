@@ -6,12 +6,14 @@
       <module fileurl="file://$PROJECT_DIR$/bmshop/common/common.iml" filepath="$PROJECT_DIR$/bmshop/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/bmshop/dependencies/dependencies.iml" filepath="$PROJECT_DIR$/bmshop/dependencies/dependencies.iml" />
       <module fileurl="file://$PROJECT_DIR$/bmshop/gateway/gateway.iml" filepath="$PROJECT_DIR$/bmshop/gateway/gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bmshop/goods-web/goods-web.iml" filepath="$PROJECT_DIR$/bmshop/goods-web/goods-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/bmshop/item/item.iml" filepath="$PROJECT_DIR$/bmshop/item/item.iml" />
       <module fileurl="file://$PROJECT_DIR$/bmshop/item/item-interface/item-interface.iml" filepath="$PROJECT_DIR$/bmshop/item/item-interface/item-interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/bmshop/item/item-service/item-service.iml" filepath="$PROJECT_DIR$/bmshop/item/item-service/item-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/bmshop/parent.iml" filepath="$PROJECT_DIR$/bmshop/parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/bmshop/registry/registry.iml" filepath="$PROJECT_DIR$/bmshop/registry/registry.iml" />
       <module fileurl="file://$PROJECT_DIR$/bmshop/search/search.iml" filepath="$PROJECT_DIR$/bmshop/search/search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bmshop/goods-web/search (1).iml" filepath="$PROJECT_DIR$/bmshop/goods-web/search (1).iml" />
       <module fileurl="file://$PROJECT_DIR$/bmshop/upload/upload.iml" filepath="$PROJECT_DIR$/bmshop/upload/upload.iml" />
     </modules>
   </component>

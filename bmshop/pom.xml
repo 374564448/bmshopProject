@@ -21,6 +21,7 @@
         <module>upload</module>
         <module>item</module>
         <module>search</module>
+        <module>goods-web</module>
     </modules>
 
     <properties>

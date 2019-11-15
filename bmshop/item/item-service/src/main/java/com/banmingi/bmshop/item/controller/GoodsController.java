@@ -3,6 +3,7 @@ package com.banmingi.bmshop.item.controller;
 import com.banmingi.bmshop.common.pojo.PageResult;
 import com.banmingi.bmshop.item.bo.SpuBo;
 import com.banmingi.bmshop.item.pojo.Sku;
+import com.banmingi.bmshop.item.pojo.Spu;
 import com.banmingi.bmshop.item.pojo.SpuDetail;
 import com.banmingi.bmshop.item.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -102,6 +103,21 @@ public class GoodsController {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(skus);
+    }
+
+    /**
+     * 根据id 查询spu
+     * @param id
+     * @return
+     */
+    @GetMapping("{id}")
+    public ResponseEntity<Spu> querySpuById(@PathVariable("id") Long id) {
+        Spu spu = this.goodsService.querySpuById(id);
+        if(spu == null) {
+            //404
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(spu);
     }
 
 

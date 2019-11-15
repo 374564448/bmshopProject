@@ -3,8 +3,8 @@ package com.banmingi.bmshop.item.api;
 import com.banmingi.bmshop.common.pojo.PageResult;
 import com.banmingi.bmshop.item.bo.SpuBo;
 import com.banmingi.bmshop.item.pojo.Sku;
+import com.banmingi.bmshop.item.pojo.Spu;
 import com.banmingi.bmshop.item.pojo.SpuDetail;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -47,4 +47,12 @@ public interface GoodsApi {
      */
     @GetMapping("sku/list")
    List<Sku> querySkusBySpuId(@RequestParam("id")Long spuId);
+
+    /**
+     * 根据id 查询spu
+     * @param id
+     * @return
+     */
+    @GetMapping("{id}")
+    Spu querySpuById(@PathVariable("id") Long id);
 }
