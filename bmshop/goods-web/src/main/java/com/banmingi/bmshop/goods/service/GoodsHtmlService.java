@@ -49,4 +49,12 @@ public class GoodsHtmlService {
         }
     }
 
+    /**
+     * 删除静态页面.
+     * @param id
+     */
+    public void deleteHtml(Long id) {
+        File file = new File("E:\\Nginx\\nginx-1.14.2\\html\\item\\" + id + ".html");
+        file.deleteOnExit();
+    }
 }

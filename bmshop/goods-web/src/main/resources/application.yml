@@ -8,6 +8,12 @@ spring:
     cache: false
   main:
     allow-bean-definition-overriding: true
+  rabbitmq:
+    host: 192.168.72.130
+    virtual-host: /bmshop
+    username: bmshop
+    password: 123456
+
 
 eureka:
   client:
