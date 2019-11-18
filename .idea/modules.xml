@@ -14,7 +14,11 @@
       <module fileurl="file://$PROJECT_DIR$/bmshop/registry/registry.iml" filepath="$PROJECT_DIR$/bmshop/registry/registry.iml" />
       <module fileurl="file://$PROJECT_DIR$/bmshop/search/search.iml" filepath="$PROJECT_DIR$/bmshop/search/search.iml" />
       <module fileurl="file://$PROJECT_DIR$/bmshop/goods-web/search (1).iml" filepath="$PROJECT_DIR$/bmshop/goods-web/search (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/bmshop/sms/sms.iml" filepath="$PROJECT_DIR$/bmshop/sms/sms.iml" />
       <module fileurl="file://$PROJECT_DIR$/bmshop/upload/upload.iml" filepath="$PROJECT_DIR$/bmshop/upload/upload.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bmshop/user/user.iml" filepath="$PROJECT_DIR$/bmshop/user/user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bmshop/user/user-interface/user-interface.iml" filepath="$PROJECT_DIR$/bmshop/user/user-interface/user-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bmshop/user/user-service/user-service.iml" filepath="$PROJECT_DIR$/bmshop/user/user-service/user-service.iml" />
     </modules>
   </component>
 </project>

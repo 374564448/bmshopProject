@@ -2,32 +2,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>com.banmingi.bmshop</groupId>
-        <artifactId>item</artifactId>
+        <artifactId>parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-
-    <artifactId>item-interface</artifactId>
-    <packaging>jar</packaging>
+    <artifactId>user</artifactId>
+    <packaging>pom</packaging>
     <inceptionYear>2019-Now</inceptionYear>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>javax.persistence</groupId>
-            <artifactId>javax.persistence-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.banmingi.bmshop</groupId>
-            <artifactId>common</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
-    </dependencies>
+    <modules>
+        <module>user-interface</module>
+        <module>user-service</module>
+    </modules>
+
 
     <licenses>
         <license>
@@ -35,7 +23,6 @@
             <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
         </license>
     </licenses>
-
     <developers>
         <developer>
             <id>374564448</id>
@@ -43,5 +30,4 @@
             <email>l374564448@qq.com</email>
         </developer>
     </developers>
-
 </project>

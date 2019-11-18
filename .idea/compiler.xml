@@ -9,9 +9,12 @@
         <module name="gateway" />
         <module name="search" />
         <module name="common" />
+        <module name="sms" />
         <module name="item-interface" />
         <module name="item-service" />
+        <module name="user-interface" />
         <module name="registry" />
+        <module name="user-service" />
         <module name="upload" />
         <module name="search (1)" />
         <module name="goods-web" />
@@ -24,12 +27,17 @@
       <module name="goods-web" target="1.8" />
       <module name="item" target="1.8" />
       <module name="item-interface" target="1.8" />
+      <module name="item-interface (1)" target="1.8" />
       <module name="item-service" target="1.8" />
       <module name="parent" target="1.8" />
       <module name="registry" target="1.8" />
       <module name="search" target="1.8" />
       <module name="search (1)" target="1.8" />
+      <module name="sms" target="1.8" />
       <module name="upload" target="1.8" />
+      <module name="user" target="1.8" />
+      <module name="user-interface" target="1.8" />
+      <module name="user-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -38,11 +46,15 @@
       <module name="gateway" options="-parameters" />
       <module name="goods-web" options="-parameters" />
       <module name="item-interface" options="-parameters" />
+      <module name="item-interface (1)" options="-parameters" />
       <module name="item-service" options="-parameters" />
       <module name="registry" options="-parameters" />
       <module name="search" options="-parameters" />
       <module name="search (1)" options="-parameters" />
+      <module name="sms" options="-parameters" />
       <module name="upload" options="-parameters" />
+      <module name="user-interface" options="-parameters" />
+      <module name="user-service" options="-parameters" />
     </option>
   </component>
 </project>

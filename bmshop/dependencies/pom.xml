@@ -17,6 +17,9 @@
         <aliyun-sdk-oss.version>3.7.0</aliyun-sdk-oss.version>
         <lombok.version>1.18.8</lombok.version>
         <commons-lang3.version>3.9</commons-lang3.version>
+        <fastjson.version>1.2.62</fastjson.version>
+        <org.json.version>20190722</org.json.version>
+        <okhttp3.version>4.2.2</okhttp3.version>
     </properties>
     <licenses>
         <license>
@@ -83,6 +86,22 @@
                 <artifactId>commons-lang3</artifactId>
                 <version>${commons-lang3.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.json</groupId>
+                <artifactId>json</artifactId>
+                <version>${org.json.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>${okhttp3.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 </project>

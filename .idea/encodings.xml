@@ -10,6 +10,10 @@
     <file url="file://$PROJECT_DIR$/bmshop/item/item-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bmshop/registry" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bmshop/search" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bmshop/sms" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bmshop/upload" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bmshop/user" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bmshop/user/user-interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bmshop/user/user-service" charset="UTF-8" />
   </component>
 </project>

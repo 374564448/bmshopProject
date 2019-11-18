@@ -5,11 +5,11 @@
 
     <parent>
         <groupId>com.banmingi.bmshop</groupId>
-        <artifactId>item</artifactId>
+        <artifactId>user</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>item-interface</artifactId>
+    <artifactId>user-interface</artifactId>
     <packaging>jar</packaging>
     <inceptionYear>2019-Now</inceptionYear>
 

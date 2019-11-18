@@ -22,6 +22,8 @@
         <module>item</module>
         <module>search</module>
         <module>goods-web</module>
+        <module>user</module>
+        <module>sms</module>
     </modules>
 
     <properties>

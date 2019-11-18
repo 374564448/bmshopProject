@@ -1,0 +1,25 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: user-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bmshop?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+    username: root
+    password: wen175924
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+  instance:
+    # 心跳时间
+    lease-renewal-interval-in-seconds: 5
+    # 过期时间
+    lease-expiration-duration-in-seconds: 15
+
+mybatis:
+  type-aliases-package: com.banmingi.bmshop.user.pojo

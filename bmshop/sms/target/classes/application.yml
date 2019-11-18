@@ -1,0 +1,18 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: sms-service
+  rabbitmq:
+    host: 192.168.72.130
+    virtual-host: /bmshop
+    username: bmshop
+    password: 123456
+
+sms:
+  action: send
+  userid: 4026
+  account: 13070845135
+  password: wen175924
+  url: http://sms.hutonginfo.com/sms.aspx
