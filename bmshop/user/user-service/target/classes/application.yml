@@ -9,7 +9,18 @@ spring:
     url: jdbc:mysql://localhost:3306/bmshop?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
     username: root
     password: wen175924
-
+  redis:
+    host: 192.168.72.130
+    port: 6379
+    password: 123456
+  rabbitmq:
+    host: 192.168.72.130
+    virtual-host: /bmshop
+    username: bmshop
+    password: 123456
+    # 指定交换机
+    template:
+      exchange: BMSHOP.SMS.EXCHANGE
 
 eureka:
   client:
