@@ -3,12 +3,14 @@ package com.banmingi.bmshop.user.service;
 import com.banmingi.bmshop.common.utils.NumberUtils;
 import com.banmingi.bmshop.user.mapper.UserMapper;
 import com.banmingi.bmshop.user.pojo.User;
+import com.banmingi.bmshop.user.utils.CodecUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -65,6 +67,60 @@ public class UserService {
         this.amqpTemplate.convertAndSend("verifycode.sms",msg);
 
         //把验证码保存到redis中
-        this.redisTemplate.opsForValue().set(KEY_PREFIX+phone,code,5, TimeUnit.MINUTES);
+        this.redisTemplate.opsForValue().set(KEY_PREFIX + phone,code,5, TimeUnit.MINUTES);
+    }
+
+    /**
+     * 注册用户.
+     * @param user
+     * @param code
+     */
+    public void register(User user, String code) {
+        //查询redis中的验证码
+        String redisCode = this.redisTemplate.opsForValue().get(KEY_PREFIX + user.getPhone());
+        //校验验证码
+        if (!StringUtils.equals(code,redisCode)) {
+            return;
+        }
+
+        //生成盐
+        String salt = CodecUtils.generateSalt();
+        user.setSalt(salt);
+
+        //加盐加密
+        user.setPassword(CodecUtils.md5Hex(user.getPassword(),salt));
+
+        //新增用户
+        user.setId(null);
+        user.setCreated(new Date());
+        this.userMapper.insertSelective(user);
+
+        //删除redis中存储的验证码
+        this.redisTemplate.delete(KEY_PREFIX + user.getPhone());
+    }
+
+    /**
+     * 查找用户.
+     * @param username
+     * @param password
+     * @return
+     */
+    public User queryUser(String username, String password) {
+        User record = new User();
+        record.setUsername(username);
+
+        //根据用户名查询数据库获取盐值
+        User user = this.userMapper.selectOne(record);
+        if (user == null) {
+            return null;
+        }
+        //获取用户输入的密码进行加盐加密
+        password = CodecUtils.md5Hex(password,user.getSalt());
+
+        //和数据库中的密码进行比较
+        if (StringUtils.equals(password,user.getPassword())) {
+            return user;
+        }
+        return null;
     }
 }

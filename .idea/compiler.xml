@@ -6,22 +6,28 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="gateway" />
+        <module name="upload" />
         <module name="search" />
-        <module name="common" />
+        <module name="user-service" />
+        <module name="gateway" />
+        <module name="auth-common" />
+        <module name="goods-web" />
+        <module name="registry" />
+        <module name="auth-service" />
+        <module name="item-service" />
         <module name="sms" />
         <module name="item-interface" />
-        <module name="item-service" />
         <module name="user-interface" />
-        <module name="registry" />
-        <module name="user-service" />
-        <module name="upload" />
         <module name="search (1)" />
-        <module name="goods-web" />
+        <module name="common" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="auth" target="1.8" />
+      <module name="auth-common" target="1.8" />
+      <module name="auth-service" target="1.8" />
       <module name="common" target="1.8" />
+      <module name="common (1)" target="1.8" />
       <module name="dependencies" target="1.8" />
       <module name="gateway" target="1.8" />
       <module name="goods-web" target="1.8" />
@@ -42,7 +48,10 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="auth-common" options="-parameters" />
+      <module name="auth-service" options="-parameters" />
       <module name="common" options="-parameters" />
+      <module name="common (1)" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="goods-web" options="-parameters" />
       <module name="item-interface" options="-parameters" />

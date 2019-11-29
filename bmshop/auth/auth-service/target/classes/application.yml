@@ -1,0 +1,28 @@
+server:
+  port: 8087
+
+spring:
+  application:
+    name: auth-service
+  main:
+    allow-bean-definition-overriding: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+    # 拉取微服务时间
+    registry-fetch-interval-seconds: 10
+  instance:
+    # 心跳时间
+    lease-renewal-interval-in-seconds: 5
+    # 过期时间
+    lease-expiration-duration-in-seconds: 15
+
+bmshop:
+  jwt:
+    secret: bmshop@banmingi$$$.xyz*(auth)com # 登录校验的秘钥
+    pubKeyPath: C:\\tmp\\rsa\\rsa.pub # 公钥地址
+    priKeyPath: C:\\tmp\\rsa\\rsa.pri # 私钥地址
+    expire: 30 # 过期时间,单位分钟
+    cookieName: BM_TOKEN

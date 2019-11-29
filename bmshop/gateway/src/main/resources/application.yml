@@ -23,4 +23,25 @@ zuul:
       strip-prefix: false
     # 路由到搜索微服务
     search-service: /search/**
+    # 路由到用户服务
+    user-service: /user/**
+      # 路由到授权服务
+    auth-service: /auth/**
+  add-host-header: true
+  sensitive-headers:  # 覆盖默认敏感头信息
 
+bmshop:
+  jwt:
+    pubKeyPath: C:\\tmp\\rsa\\rsa.pub # 公钥地址
+    cookieName: BM_TOKEN
+
+  #路由拦截白名单
+  filter:
+    allowPaths:
+      - /api/auth
+      - /api/search
+      - /api/user/register
+      - /api/user/check
+      - /api/user/code
+      - /api/item
+      - /api/upload

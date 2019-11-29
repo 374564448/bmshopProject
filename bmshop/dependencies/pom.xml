@@ -20,6 +20,9 @@
         <fastjson.version>1.2.62</fastjson.version>
         <org.json.version>20190722</org.json.version>
         <okhttp3.version>4.2.2</okhttp3.version>
+        <hibernate-validator.version>6.1.0.Final</hibernate-validator.version>
+        <jjwt.version>0.9.0</jjwt.version>
+        <joda-time.version>2.10.5</joda-time.version>
     </properties>
     <licenses>
         <license>
@@ -100,6 +103,21 @@
                 <groupId>com.squareup.okhttp3</groupId>
                 <artifactId>okhttp</artifactId>
                 <version>${okhttp3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate-validator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>${joda-time.version}</version>
             </dependency>
 
         </dependencies>
