@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/bmshop/auth/auth-common/auth-common.iml" filepath="$PROJECT_DIR$/bmshop/auth/auth-common/auth-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/bmshop/auth/auth-service/auth-service.iml" filepath="$PROJECT_DIR$/bmshop/auth/auth-service/auth-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/bmshopProject.iml" filepath="$PROJECT_DIR$/.idea/bmshopProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bmshop/cart/cart.iml" filepath="$PROJECT_DIR$/bmshop/cart/cart.iml" />
       <module fileurl="file://$PROJECT_DIR$/bmshop/common/common.iml" filepath="$PROJECT_DIR$/bmshop/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/bmshop/auth/common (1).iml" filepath="$PROJECT_DIR$/bmshop/auth/common (1).iml" />
       <module fileurl="file://$PROJECT_DIR$/bmshop/dependencies/dependencies.iml" filepath="$PROJECT_DIR$/bmshop/dependencies/dependencies.iml" />

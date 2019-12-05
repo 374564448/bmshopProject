@@ -25,8 +25,10 @@ zuul:
     search-service: /search/**
     # 路由到用户服务
     user-service: /user/**
-      # 路由到授权服务
+    # 路由到授权服务
     auth-service: /auth/**
+    # 路由到购物车服务
+    cart-service: /cart/**
   add-host-header: true
   sensitive-headers:  # 覆盖默认敏感头信息
 

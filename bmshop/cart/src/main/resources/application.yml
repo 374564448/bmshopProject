@@ -1,0 +1,29 @@
+server:
+  port: 8088
+
+spring:
+  application:
+    name: cart-service
+  main:
+    allow-bean-definition-overriding: true
+  redis:
+    host: 192.168.72.130
+    port: 6379
+    password: 123456
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+    # 拉取微服务时间
+    registry-fetch-interval-seconds: 10
+  instance:
+    # 心跳时间
+    lease-renewal-interval-in-seconds: 5
+    # 过期时间
+    lease-expiration-duration-in-seconds: 15
+
+bmshop:
+  jwt:
+    pubKeyPath: C:\\tmp\\rsa\\rsa.pub # 公钥地址
+    cookieName: BM_TOKEN
