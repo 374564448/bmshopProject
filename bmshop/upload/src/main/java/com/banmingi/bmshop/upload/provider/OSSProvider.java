@@ -16,10 +16,10 @@ import java.util.UUID;
  */
 public class OSSProvider {
 
-    private static final String ENDPOINT = "oss-cn-qingdao.aliyuncs.com";
-    private static final String ACCESS_KEY_ID = "LTAI4FxG4FAfSTEoMPxoAEr4";
-    private static final String ACCESS_KEY_SECRET = "QB5W0qoZfYh73N8KT44AyjU2BmxS13";
-    private static final String BUCKET_NAME = "banmingi-bmshop";
+    private static final String ENDPOINT = "xxxxx";
+    private static final String ACCESS_KEY_ID = "xxxxx";
+    private static final String ACCESS_KEY_SECRET = "xxxxx";
+    private static final String BUCKET_NAME = "xxxx";
 
     /**
      * 上传文件到阿里云OSS服务器
